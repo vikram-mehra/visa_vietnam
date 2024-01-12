@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap');
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+body { margin: 0px; padding: 0px; color: #222; font-size: 18px; font-family: 'Montserrat', sans-serif; background: #FFF;    overflow-x: hidden; }
+.clear { height: 0px; overflow: hidden; clear: both; }
+p { padding-bottom: 15px; line-height: 24px;font-family: 'Montserrat', sans-serif;font-size: 18px; }
+a { color: #000;font-family: 'Montserrat', sans-serif; }
+ul li{font-family: 'Montserrat', sans-serif;font-size: 18px;}
+ul, ol { padding: 0px 0px 20px 15px; }
+a:hover { text-decoration: none; }
+h1,h2,h3,h4,h5,h6 { padding-bottom: 5px; font-weight: normal;font-family: 'Montserrat', sans-serif; }
+h1 { font-size: 26px; }
+h2 { font-size: 24px; font-family: 'Montserrat', sans-serif;}
+h3 { font-size: 22px; font-family: 'Montserrat', sans-serif;}
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+img { max-width: 100%; height: auto; }
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select { padding: 8px 10px; border: 1px solid #c8c3c3; font-size: 16px; outline: none; }
+input[type="submit"], input[type="button"] { background: #666; padding: 10px; color: #fff; border: 0; cursor: pointer;  }
+
+#wrapper { float: left; width: 100%; overflow: hidden; }
+
+	/* layout */
+	#layout { width: 100%; position: relative; }
+	.wrapper { max-width: 1270px; margin: 0 auto; position: relative; padding: 0 10px; }
+
+
+.logo_sec{float: left;width: 10%;}
+.dropdown .btn{padding: 14px 12px;color: #222;background: transparent;}
+header ul li a {color: #222 !important;}
+
+form.example input[type=text] {padding: 10px;font-size: 17px;border: 1px solid grey;float: left;width: 80%;background: #f1f1f1;}
+form.example button {float: left;width: 20%;padding: 10px;background: #2196F3;color: white;font-size: 17px;border: 1px solid grey;border-left: none;cursor: pointer;}
+form.example button:hover {background: #0b7dda;}
+form.example::after {content: "";clear: both;display: table;}
+.search_sec{float: left;}
+.navbar-brand>img {padding-top: 11px;width: 130px;margin-left: 60px;}
+.navbar-brand {height: auto;margin: 0;padding: 0;margin-right: 20px;}
+.navbar-default{color: #fff;background-color: #2F4F4F;border-color: #000000;}
+.navbar-default .navbar-nav > li > a{color:#fff;}
+.navbar-default .navbar-nav > .dropdown > a .caret{border-top-color: #222;border-bottom-color: #222;}
+.navbar-default .navbar-brand{color:#fff;}
+.menu-large {position: static !important;}
+.megamenu{padding: 20px 0px;width:100%;}
+.megamenu> li > ul {padding: 0;margin: 0;}
+.megamenu> li > ul > li {list-style: none;}
+.megamenu> li > ul > li > a {display: block;padding: 3px 20px;clear: both;font-weight: normal;line-height: 1.428571429;color: #333333;white-space: normal;}
+.megamenu> li ul > li > a:hover,
+.megamenu> li ul > li > a:focus {text-decoration: none;color: #262626;background-color: #f5f5f5;}
+.megamenu.disabled > a,
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {color: #999999;}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {color: #00A7E8;}
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {text-decoration: none;background-color: transparent;background-image: none;filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);cursor: not-allowed;}
+.megamenu.dropdown-header {color: #428bca;font-size: 18px;}
+.services{float: left;width: 100%;padding: 60px 0;}
+.services .ser_card{float: left;width: 31.333%;border: 1px solid #f1f1f1;margin: 1%;}
+.services h3{font-size: 16px;text-align: center;font-weight: 600;font-family: 'Montserrat', sans-serif;}  
+
+.immg{float: left;width: 100%;padding: 60px 0;background: #f8f8f8;}
+.immg .left{float: left;width: 60%;padding-right: 30px;}
+.immg .right{float: left;width: 40%;box-shadow: 0px 0px 9px #a5a5a5;padding: 20px;}
+.info_sec{float: left;width: 100%;border-top: 1px solid #f1f1f1;padding: 60px 0;}
+ header .btn{font-size: 18px;}
+header ul.nav.navbar-nav{padding: 9px 10px;}
+
+.evisa_reg{float: left;width: 100%;    padding: 0px 0px 60px;height: 100vh}
+
+
+
+.evisa_reg h2{text-align: center;padding-bottom: 20px;}
+.evisa_reg p{text-align: center;}
+.evisa_reg .field{float: left;width: 100%;padding: 10px 0;}
+.evisa_reg .field input{width: 100%;padding: 10px;margin-top: 10px;}
+.evisa_reg lable {font-size: 18px;}
+.evisa_reg form{max-width: 450px;margin: 0 auto;}
+.evisa_reg button {padding: 10px 40px;font-size: 16px;}
+.evisa_reg select.form-select {display: block;width: 100%;padding: 10px;margin-top: 10px;border: 1px solid #c8c3c3;}
+.evisa_reg textarea{max-width: 100%;resize: none;margin-top: 10px;border: 1px solid #c8c3c3;}
+.evisa_reg .ecard_sec{float: left;width: 31.333%;padding: 20px;margin: 1%;}
+.evisa_reg .ecard_sec p{text-align: left;}
+.evisa_reg .ecard_sec button{width: 100%;}
+.evisa_reg .ecard_sec ul{padding: 0;}
+.evisa_reg .ecard_sec li{list-style: none;padding: 10px 0px;}
+.evisa_reg .ecard_sec input{border: 0px solid #c8c3c3;font-size: 40px;font-weight: 600;margin: 0 5px 0px;}
+
+.footer{float: left;width: 100%;padding: 10px;text-align: center;background: red;}
+.footer p{color: #fff;padding: 0;margin: 0;font-size: 14px;}
+
+
+
+.file-preview {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn.btn-secondary.btn-file {
+    display: flex;
+    align-items: center;
+    width: 10vw;
+    margin-bottom: 15px;
+}
+
+button.btn.btn-primary.btn-block.py-3.btn-lg {
+    background: #46403e;
+    border: none;
+}
+
+button:focus-visible {
+ outline:none;
+}
+
+.btn.btn-secondary.btn-file:focus {
+	border:none;
+	outline:none;
+}
+
+h3.mb-4.h4 a {
+    color: #f00;
+}
+input[type=checkbox], input[type=radio] {
+    margin: 20px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+
+
+.btn.btn-secondary.btn-file:hover {
+    color: #cdc0c0;
+}
+
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.d-flex.w-100.justify-content-center {
+    width: max-content;
+    margin: 20px auto;
+}
+
+.file-drop-zone {
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 12px 15px 12px 12px;
+    padding: 5px;
+}
+
+.file-drop-zone .file-preview-thumbnails {
+    cursor: default;
+}
+.text-success {
+    color: #28a745!important;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-file input[type=file] {
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    opacity: 0;
+    background: none repeat scroll 0 0 transparent;
+    cursor: inherit;
+    display: block;
+}
+
+.file-default-preview {
+    height: 190px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1120px) {
+.container{width: 97% !important;}	
+.services h3{font-size: 14px;}
+header a{font-size: 16px;}
+
+}	
+
+
+@media only screen and (max-width: 1020px) {
+	
+	
+}
+		
+@media only screen and (max-width: 767px) {
+.services .ser_card{width: 100%;}	
+.services h3{font-size: 20px;}	
+.evisa_reg .ecard_sec{width: 48%;}
+.evisa_reg .ecard_sec li{font-size: 14px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+.megamenu{margin-left: 0 ;
+    margin-right: 0 ;
+  }
+  .megamenu> li {
+    margin-bottom: 30px;
+  }
+  .megamenu> li:last-child {
+    margin-bottom: 0;
+  }
+  .megamenu.dropdown-header {
+    padding: 3px 15px !important;
+  }
+  .navbar-nav .open .dropdown-menu .dropdown-header{
+	color:#fff;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+.logo_sec{width: 30%;} 	
+.immg .left{width: 100%;padding-right: 0px;}
+.immg .right{width: 100%;}	
+.evisa_reg .ecard_sec{width: 100%;}
+
+ 
+}
+
+
+
+  
