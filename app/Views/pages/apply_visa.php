@@ -472,4 +472,3 @@
 		 
  
 
-<?php include('footer.php'); ?>

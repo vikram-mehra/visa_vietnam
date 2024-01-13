@@ -1,8 +1,5 @@
 
-<?php include 'header.php';?>
-
- 
-         <div class="immg">
+        <div class="immg">
             <div class="container">
                <div class="left">
                   <h2>Immigration and citizenship</h2>
@@ -23,4 +20,3 @@
 		 
  
 
-<?php include('footer.php'); ?>

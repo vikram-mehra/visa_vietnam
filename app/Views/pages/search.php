@@ -1,8 +1,4 @@
- 
- <?php include 'header.php';?>
-
- 
-         <div class="evisa_reg">
+<div class="evisa_reg">
             <div class="container">
                <h2>Check application status and download E-Visa</h2>
                <form>
@@ -29,4 +25,4 @@
          </div>
  
  
- <?php include('footer.php'); ?>
+ 

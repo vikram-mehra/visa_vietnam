@@ -1,7 +1,4 @@
-
-<?php include 'header.php';?>
-
-         <div class="services">
+<div class="services">
             <div class="container">
                <div class="ser_card">
                   <img src="images/foreigners.jpg">
@@ -55,6 +52,3 @@
                <p>Notice: Outsiders falling into the cases recommended in Provisions 1, 2, 3 and 4, Article 8 of the Law on outsiders' entrance into, exit from, travel through and home in Vietnam, will not have any significant bearing for e-visa on this Site. They ought to send visa applications by means of the intriguing or ensuring organizations and associations to the skilled office of the Service of International concerns. ( Click for detail)</p>
             </div>
          </div>
-
-
-<?php include('footer.php'); ?>

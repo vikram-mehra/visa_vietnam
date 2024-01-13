@@ -1,4 +1,4 @@
-  <?php include 'header.php';?>
+
          <div class="evisa_reg">
             <div class="container">
                <h2>Vietnam E-Visa / Electronic Visa</h2>
@@ -38,4 +38,4 @@
               document.getElementById("answer").value=browser;
             }
          </script>
-   <?php include('footer.php'); ?>
+   
