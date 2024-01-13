@@ -1,6 +1,4 @@
 
-<?php include 'header.php';?>
-
  
  <div class="immg">
    <div class="container">

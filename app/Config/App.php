@@ -6,6 +6,26 @@ use CodeIgniter\Config\BaseConfig;
 
 class App extends BaseConfig
 {
+    public function __construct()
+    {
+        $this->set_base_url();
+    }
+
+    private function set_base_url()
+    {
+        if (!$this->baseURL) {
+
+            $domain = $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
+
+            $domain = preg_replace('/index.php.*/', '', $domain);
+            $domain = strtolower($domain);
+            if (!empty($_SERVER['HTTPS'])) {
+                $this->baseURL = 'https://' . $domain;
+            } else {
+                $this->baseURL = 'http://' . $domain;
+            }
+        }
+    }
     /**
      * --------------------------------------------------------------------------
      * Base Site URL

@@ -115,7 +115,7 @@
                                                 <table class="table table-borderless table-centered table-nowrap">
                                                     <tbody>
                                                         <tr>
-                                                            <td style="width: 20px;"><img src="assets\images\users\avatar-4.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td style="width: 20px;"><img src="<?php echo base_url('assets'); ?>/images/users/avatar-4.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Glenn Holden</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> Nevada</p>
@@ -124,7 +124,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-success" data-feather="trending-up"></i>$250.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-5.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-5.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Lolita Hamill</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> Texas</p>
@@ -133,7 +133,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-danger" data-feather="trending-down"></i>$110.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-6.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-6.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Robert Mercer</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> California</p>
@@ -142,7 +142,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-success" data-feather="trending-up"></i>$420.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-7.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-7.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Marie Kim</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> Montana</p>
@@ -151,7 +151,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-danger" data-feather="trending-down"></i>$120.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-8.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-8.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Sonya Henshaw</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> Colorado</p>
@@ -160,7 +160,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-success" data-feather="trending-up"></i>$112.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-2.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-2.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Marie Kim</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> Australia</p>
@@ -169,7 +169,7 @@
                                                             <td class="text-muted fw-semibold text-end"><i class="icon-xs icon me-2 text-danger" data-feather="trending-down"></i>$120.00</td>
                                                         </tr>
                                                         <tr>
-                                                            <td><img src="assets\images\users\avatar-1.jpg" class="avatar-xs rounded-circle " alt="..."></td>
+                                                            <td><img src="<?php echo base_url('assets'); ?>/images/users/avatar-1.jpg" class="avatar-xs rounded-circle " alt="..."></td>
                                                             <td>
                                                                 <h6 class="font-size-15 mb-1 fw-normal">Sonya Henshaw</h6>
                                                                 <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-map-marker"></i> India</p>
@@ -565,7 +565,7 @@
 
                 <div class="p-4">
                     <div class="mb-2">
-                        <img src="assets\images\layouts\layout-1.jpg" class="img-thumbnail" alt="layout images">
+                        <img src="<?php echo base_url('assets'); ?>/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
                     </div>
                     <div class="form-check form-switch mb-3">
                         <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked="">
@@ -573,7 +573,7 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets\images\layouts\layout-2.jpg" class="img-thumbnail" alt="layout images">
+                        <img src="<?php echo base_url('assets'); ?>/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
                     </div>
                     <div class="form-check form-switch mb-3">
                         <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch">
@@ -581,7 +581,7 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets\images\layouts\layout-3.jpg" class="img-thumbnail" alt="layout images">
+                        <img src="<?php echo base_url('assets'); ?>/images/layouts/layout-3.jpg" class="img-thumbnail" alt="layout images">
                     </div>
                     <div class="form-check form-switch mb-3">
                         <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch">
@@ -589,7 +589,7 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets\images\layouts\layout-4.jpg" class="img-thumbnail" alt="layout images">
+                        <img src="<?php echo base_url('assets'); ?>/images/layouts/layout-4.jpg" class="img-thumbnail" alt="layout images">
                     </div>
                     <div class="form-check form-switch mb-5">
                         <input class="form-check-input theme-choice" type="checkbox" id="dark-rtl-mode-switch">

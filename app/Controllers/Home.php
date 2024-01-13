@@ -34,4 +34,10 @@ class Home extends BaseController
         echo view('pages/service');
         echo view('container/footer');
     }
+    public function apply_visa()
+    {
+        echo view('container/header');
+        echo view('pages/apply_visa');
+        echo view('container/footer');
+    }
 }
