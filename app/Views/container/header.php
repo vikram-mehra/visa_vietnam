@@ -21,7 +21,7 @@
             <div class="navbar navbar-default navbar-static-top">
                <div class="container">
                   <div class="logo_sec">
-                     <a href=""><img src="images/logo.png"></a>
+                     <a href="<?php echo base_url(); ?>"><img src="images/logo.png"></a>
                   </div>
                   <div class="navbar-header">
                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,7 +34,7 @@
                   <div class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
 					 
-					 <li><a href=""> Home  </a></li>
+					 <li><a href="<?php echo base_url(); ?>"> Home  </a></li>
 					  <li><a href="about"> About Us  </a></li>
                         <li><a href="e-visa-search"> E-Visa Search </a></li>
                         <li><a href="e-visa-support"> E-Visa Support </a></li>
