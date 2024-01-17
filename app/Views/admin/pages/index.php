@@ -21,19 +21,20 @@
                                     <p class="text-muted">Sign in to continue to Visa Vietnam.</p>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="index.html">
+                                <?php echo form_open('submit-form'); ?>
+                                <form name="loginForm" >
         
                                         <div class="mb-3">
-                                            <label class="form-label" for="username">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
                                         </div>
                 
                                         <div class="mb-3">
                                             <div class="float-end">
                                                 <a href="auth-recoverpw.html" class="text-muted">Forgot password?</a>
                                             </div>
-                                            <label class="form-label" for="userpassword">Password</label>
-                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                            <label class="form-label" for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                                         </div>
                 
                                         <div class="form-check">
@@ -76,6 +77,7 @@
                                             <p class="mb-0">Don't have an account ? <a href="auth-register.html" class="fw-medium text-primary"> Signup now </a> </p>
                                         </div>
                                     </form>
+                                    <?php echo form_close(); ?>
                                 </div>
             
                             </div>
