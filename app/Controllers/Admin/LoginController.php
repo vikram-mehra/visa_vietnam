@@ -3,12 +3,15 @@
 namespace App\Controllers\Admin;
 use CodeIgniter\Controller;
 use App\Controllers\BaseController;
+use App\Models\Admin\UserModel;
 
 class LoginController extends BaseController
 {
     public function __construct()
     {
         $this->session = \Config\Services::session();
+        $this->validation = \Config\Services::validation();
+        $this->userModel = new UserModel();
     }
 
     public function index()
@@ -34,11 +37,11 @@ class LoginController extends BaseController
     }
 	public function setUserLogin()
 	{
-        $validation = \Config\Services::validation();
-
+        $email = $_POST['email'];
+        $password = $_POST['password'];
         $formData = [
-            'email' => $_POST['email'],
-            'password' => $_POST['password']
+            'email' => $email,
+            'password' => $password
         ];
 
         $rules = [
@@ -47,26 +50,33 @@ class LoginController extends BaseController
         ];
         
         // Set the rules
-        $validation->setRules($rules);
-        $status = $validation->run($formData);
+        $this->validation->setRules($rules);
+        $status = $this->validation->run($formData);
         
         // Now, you can use the validation instance to check the rules
         if ($status) {
-            $newdata = [
-            'admin_id'  => 1,
-            'username'  => 'johndoe',
-            'email'     => 'johndoe@some-site.com',
-            'logged_in' => true,
-        ];
-        
-        $this->session->set($newdata);
-            return redirect()->route('admin/dashboard');
-            // Validation passed
+            $hashedPassword = md5($password);
+
+            $users = $this->userModel
+                    ->where('email', $email)
+                    ->where('password', $hashedPassword)
+                    ->where('status', 1)
+                    ->first();
+            if (!empty($users)) {
+                $newdata = [
+                    'admin_id'  => $users['id'],
+                    'username'  => $users['name'],
+                    'email'     => $users['email'],
+                    'logged_in' => true,
+                ];
+                $this->session->set($newdata);
+                return redirect()->route('admin/dashboard');
+            }
         } else {
             // Validation failed
-            $errors = $validation->getErrors();
+            $errors = $this->validation->getErrors();
             // Validation failed, return to the form with errors
-            return redirect()->route('admin');
         }
+        return redirect()->route('admin');
 	}
 }

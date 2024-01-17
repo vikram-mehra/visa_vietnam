@@ -11,7 +11,7 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="<?php echo base_url('admin'); ?>" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
                                 </span>
@@ -20,7 +20,7 @@
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                            <a href="<?php echo base_url('admin'); ?>" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
                                 </span>
@@ -44,16 +44,13 @@
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="<?php echo base_url('assets'); ?>/images/users/avatar-4.jpg" alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">Marcus</span>
+                                <img class="rounded-circle header-profile-user" src="<?php echo base_url('assets'); ?>/images/users/avatar-2.jpg" alt="Header Avatar">
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">Admin</span>
                                 <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">View Profile</span></a>
-                                <a class="dropdown-item" href="#"><i class="uil uil-wallet font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">My Wallet</span></a>
-                                <a class="dropdown-item d-block" href="#"><i class="uil uil-cog font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Settings</span> <span class="badge bg-soft-success rounded-pill mt-1 ms-2">03</span></a>
-                                <a class="dropdown-item" href="#"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Lock screen</span></a>
+                                <a class="dropdown-item" href="<?php echo base_url('admin/dashboard'); ?>"><i class="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">View Profile</span></a>
                                 <a class="dropdown-item" href="<?php echo base_url('admin/logout'); ?>"><i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Sign out</span></a>
                             </div>
                         </div>
@@ -66,7 +63,7 @@
 
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
-                    <a href="index.html" class="logo logo-dark">
+                    <a href="<?php echo base_url('admin'); ?>" class="logo logo-dark">
                         <span class="logo-sm">
                             <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
                         </span>
@@ -75,7 +72,7 @@
                         </span>
                     </a>
 
-                    <a href="index.html" class="logo logo-light">
+                    <a href="<?php echo base_url('admin'); ?>" class="logo logo-light">
                         <span class="logo-sm">
                             <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
                         </span>
@@ -98,7 +95,7 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="index.html">
+                                <a href="<?php echo base_url('admin'); ?>">
                                     <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">01</span>
                                     <span>Dashboard</span>
                                 </a>
