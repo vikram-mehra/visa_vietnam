@@ -38,13 +38,29 @@ class HomeController extends BaseController
     {
         $query = $this->db->table('support_query');
         $results = $query->get()->getResult();
-        // pre($results);
         $admin_id = $this->session->has('admin_id');
 		if($admin_id)
 		{
             echo view('admin/common/header');
             echo view('admin/common/sidebar');
             echo view('admin/pages/support_list', ['data' => $results]);
+            echo view('admin/common/footer');
+		}
+		else
+		{
+            return redirect()->route('admin');
+		}
+    }
+    public function appliedVisaList()
+    {
+        $query = $this->db->table('visa_application');
+        $results = $query->get()->getResult();
+        $admin_id = $this->session->has('admin_id');
+		if($admin_id)
+		{
+            echo view('admin/common/header');
+            echo view('admin/common/sidebar');
+            echo view('admin/pages/applied_visa_list', ['data' => $results]);
             echo view('admin/common/footer');
 		}
 		else

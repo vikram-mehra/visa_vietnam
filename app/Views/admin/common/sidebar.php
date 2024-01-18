@@ -111,12 +111,12 @@
                             </li>
 
                             <li>
-                                <a href="chat.html" class=" waves-effect">
-                                    <i class="uil-comments-alt"></i>
-                                    <span class="badge rounded-pill bg-warning float-end">New</span>
-                                    <span>Chat</span>
+                                <a href="<?php echo base_url('admin/applied-visa'); ?>" class="waves-effect">
+                                    <i class="uil-list-ul"></i>
+                                    <span>Applied Visa</span>
                                 </a>
                             </li>
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
