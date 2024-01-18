@@ -18,5 +18,6 @@ $routes->post('submit-visa-form', 'FormController::submitVisaForm');
 
 $routes->get('/admin', 'Admin\LoginController::index');
 $routes->get('/admin/dashboard', 'Admin\HomeController::dashboard');
+$routes->get('/admin/support-list', 'Admin\HomeController::supportList');
 $routes->post('submit-form', 'Admin\LoginController::setUserLogin');
 $routes->get('admin/logout', 'Admin\LoginController::UserlogOut');

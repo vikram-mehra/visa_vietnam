@@ -6,8 +6,8 @@
          <h1 class="w-100 text-center h2">Booking E-visa for outside Vietnam foreigners</h1>
       </div>
       <?php include('error.php'); ?>
-      <?php echo form_open('submit-visa-form'); ?>
-      <form>
+      <?php echo form_open('submit-visa-form', ['enctype' => 'multipart/form-data']); ?>
+      <form enctype="multipart/form-data">
          <h3 class="mb-4 h4"> <i class="fa fa-file-image-o" aria-hidden="true"></i>  Foreigner's images</h3>
          <div class="row mt-4">
             <div class="col-sm-5 mb-3">

@@ -97,13 +97,15 @@ class FormController extends BaseController
                 "formData" => []
             ];
         }
+        $img_data = $this->processImage();
+
+        $photo = $img_data['photo'];
+        $doc = $img_data['doc'];
         $full_name = $_POST['full_name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $nationality = $_POST['nationality'];
         $purpose_of_entry = $_POST['purpose_of_entry'];
-        $photo = $_POST['photo'];
-        $doc = $_POST['doc'];
         $entry_checkpoint = $_POST['entry_checkpoint'];
         $date_valid = $_POST['date_valid'];
         $formData = [
@@ -112,10 +114,10 @@ class FormController extends BaseController
             'phone' => $phone,
             'nationality' => $nationality,
             'purpose_of_entry' => $purpose_of_entry,
-            'photo' => $photo,
-            'doc' => $doc,
             'entry_checkpoint' => $entry_checkpoint,
             'date_valid' => $date_valid,
+            'photo' => $photo,
+            'doc' => $doc,
         ];
 
         $rules = [
@@ -124,10 +126,10 @@ class FormController extends BaseController
             'phone' => 'required',
             'nationality' => 'required',
             'purpose_of_entry' => 'required',
-            'photo' => 'required',
-            'doc' => 'required',
             'entry_checkpoint' => 'required',
             'date_valid' => 'required',
+            'photo' => 'required',
+            'doc' => 'required',
         ];
         
         // Set the rules
@@ -139,6 +141,44 @@ class FormController extends BaseController
         ];
     }
 
+    public function processImage()
+    {
+        $result['photo'] = $result['doc'] = "";
+        // Get the uploaded image file
+        $imageFile = $this->request->getFile('photo');
+        $docFile = $this->request->getFile('doc');
+        $data = [
+            "photo" => [
+                "file" => $imageFile,
+                "path" => './assets/upload/photo/',
+            ],
+            "doc" => [
+                "file" => $docFile,
+                "path" => './assets/upload/doc/',
+            ],
+        ];
+
+        foreach ($data as $key => $value) {
+            // pre($value['file']);
+            $temp = $value['file']->getTempName();
+            $path = $value['path'] . $value['file']->getName();
+
+            if ($value['file']->isValid() && !$value['file']->hasMoved()) {
+                // Define the upload directory
+                $uploadDir = $value['path']; 
+    
+                // Move the file to the upload directory
+                $value['file']->move($uploadDir);
+    
+                // Get the new file name after moving
+                $name = $value['file']->getName();
+                $result[$key] = $uploadDir.$name;
+    
+            }
+        }
+        return $result;
+
+    }
     /** visa Form submission end */
 
 

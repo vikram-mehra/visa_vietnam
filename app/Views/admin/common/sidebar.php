@@ -104,9 +104,9 @@
                             <li class="menu-title">Apps</li>
 
                             <li>
-                                <a href="calendar.html" class="waves-effect">
-                                    <i class="uil-calender"></i>
-                                    <span>Calendar</span>
+                                <a href="<?php echo base_url('admin/support-list'); ?>" class="waves-effect">
+                                    <i class="uil-book-alt"></i>
+                                    <span>Support Queries</span>
                                 </a>
                             </li>
 
