@@ -20,6 +20,7 @@
                                     <h5 class="text-primary">Welcome Back !</h5>
                                     <p class="text-muted">Sign in to continue to Visa Vietnam.</p>
                                 </div>
+                                <?php include('error.php'); ?>
                                 <div class="p-2 mt-4">
                                 <?php echo form_open('submit-form'); ?>
                                 <form name="loginForm" >

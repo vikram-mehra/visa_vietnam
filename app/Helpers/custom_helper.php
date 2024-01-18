@@ -10,7 +10,21 @@ function ci_version(): string
 {
     return CodeIgniter::CI_VERSION;
 }
-function pre($data) {
-    print_r($data);
-    die(); // Halts the execution
+/* Debugger function */
+if (!function_exists('pre')) {
+    function pre($var, $strict = false)
+    {
+        if ($var !== null) {
+            if (!$strict && (is_array($var) || is_object($var))) {
+                echo "<pre>";
+                print_r($var);
+                echo "</pre>";
+            } else {
+                echo $var;
+            }
+        } else {
+            var_dump($var);
+        }
+        die;
+    }
 }

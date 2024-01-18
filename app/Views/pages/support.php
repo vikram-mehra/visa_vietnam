@@ -2,6 +2,7 @@
          <div class="container">
             <h2>E-visa support</h2>
             <p>Please send us your problems. We will contact you as soon as possible</p>
+            <?php include('error.php'); ?>
             <?php echo form_open('submit-support-form'); ?>
             <form>
                <div class="field">

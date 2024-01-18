@@ -23,9 +23,9 @@ class LoginController extends BaseController
 		}
 		else
 		{
-            echo view('admin/container/header');
+            echo view('admin/common/header');
             echo view('admin/pages/index');
-            echo view('admin/container/footer');
+            echo view('admin/common/footer');
 		}		
 	}
 
@@ -77,6 +77,7 @@ class LoginController extends BaseController
             $errors = $this->validation->getErrors();
             // Validation failed, return to the form with errors
         }
+        $this->session->setFlashdata('error', 'An error occurred!');
         return redirect()->route('admin');
 	}
 }

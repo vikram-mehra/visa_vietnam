@@ -5,7 +5,9 @@
       <div class="mt-4 mb-3">
          <h1 class="w-100 text-center h2">Booking E-visa for outside Vietnam foreigners</h1>
       </div>
-      <form action="#" method="post">
+      <?php include('error.php'); ?>
+      <?php echo form_open('submit-visa-form'); ?>
+      <form>
          <h3 class="mb-4 h4"> <i class="fa fa-file-image-o" aria-hidden="true"></i>  Foreigner's images</h3>
          <div class="row mt-4">
             <div class="col-sm-5 mb-3">
@@ -55,7 +57,7 @@
                         </div>
                      </div>
                      <div class="clearfix"></div>
-                     <div tabindex="500" class="btn btn-secondary btn-file"> <i class="fa fa-folder-open-o" aria-hidden="true"></i> &nbsp;  <span class="hidden-xs">Browse …</span><input id="passport" name="passport" type="file"></div>
+                     <div tabindex="500" class="btn btn-secondary btn-file"> <i class="fa fa-folder-open-o" aria-hidden="true"></i> &nbsp;  <span class="hidden-xs">Browse …</span><input id="passport" name="doc" type="file"></div>
                   </div>
                </div>
                <div id="kv-passport-errors" class="mt-2 center-block alert alert-block alert-danger" style="width:100%;display:none"></div>
@@ -72,7 +74,7 @@
                   </div>
                   <div class="col-sm-8">
                      <div class="input-group date" id="evisa_From" data-target-input="nearest">
-                        <input id="evisa_From" name="evisa_From" autocomplete="off" placeholder="MM dd, YYYY" type="text" class="form-control form-control-lg datetimepicker-input" aria-required="true" data-target="#evisa_From" value="">
+                        <input id="evisa_From" name="date_valid" autocomplete="off" placeholder="MM dd, YYYY" type="text" class="form-control form-control-lg datetimepicker-input" aria-required="true" data-target="#evisa_From" value="">
                         <div class="input-group-append" data-target="#evisa_From" data-toggle="datetimepicker">
                            <div class="input-group-text"><i class="fal fa-calendar-alt fa-lg"></i></div>
                         </div>
@@ -86,7 +88,7 @@
                      <label for="evisa_entryCheckpoint">Allowed to entry through checkpoint <span class="text-danger h5">*</span></label>
                   </div>
                   <div class="col-sm-8">
-                     <select class="form-control form-control-lg" id="evisa_entryCheckpoint" name="evisa_entryCheckpoint">
+                     <select class="form-control form-control-lg" id="evisa_entryCheckpoint" name="entry_checkpoint">
                         <option value="">[ Select intended entry gate ]</option>
                         <optgroup label="Airport">
                            <option value="Cam Ranh Airport (CXR) – Khanh Hoa">Cam Ranh Airport (CXR) – Khanh Hoa</option>
@@ -139,7 +141,7 @@
                      <label for="evisa_nationality">Nationality <span class="text-danger h5">*</span></label>
                   </div>
                   <div class="col-sm-8">
-                     <select name="evisa_nationality" id="evisa_nationality" class="form-control form-control-lg">
+                     <select name="nationality" id="evisa_nationality" class="form-control form-control-lg">
                         <option value="">[ Choose nationality ]</option>
                         <optgroup label="Most selected">
                            <option value="United Kingdom">United Kingdom</option>
@@ -275,7 +277,7 @@
                      <label for="evisa_purpose">Purpose of entry <span class="text-danger h5">*</span></label>
                   </div>
                   <div class="col-sm-8">
-                     <select name="evisa_purpose" id="evisa_purpose" class="form-control form-control-lg">
+                     <select name="purpose_of_entry" id="evisa_purpose" class="form-control form-control-lg">
                         <option value="">[ Choose immigration purpose ]</option>
                         <option value="aid activities">aid activities</option>
                         <option value="air crewman">air crewman</option>
@@ -311,15 +313,15 @@
          <div class="row mt-4">
             <div class="col-sm-4 mb-3">
                <label for="evisa_fullname">Full name <span class="text-danger h5">*</span></label>
-               <input class="form-control form-control-lg" maxlength="150" type="text" name="evisa_fullname" id="evisa_fullname" value="">
+               <input class="form-control form-control-lg" maxlength="150" type="text" name="full_name" id="evisa_fullname" value="">
             </div>
             <div class="col-sm-4 mb-3">
                <label for="evisa_email">Email <span class="text-danger h5">*</span></label>
-               <input class="form-control form-control-lg" maxlength="150" type="text" name="evisa_email" id="evisa_email" value="">
+               <input class="form-control form-control-lg" maxlength="150" type="text" name="email" id="evisa_email" value="">
             </div>
             <div class="col-sm-4 mb-3">
                <label for="evisa_phone">Phone number</label>
-               <input class="form-control form-control-lg" maxlength="150" type="text" name="evisa_phone" id="evisa_phone" value="">
+               <input class="form-control form-control-lg" maxlength="150" type="text" name="phone" id="evisa_phone" value="">
             </div>
          </div>
          <div class="mt-5"></div>
@@ -328,7 +330,7 @@
             <i class="fa fa-chevron-down" aria-hidden="true"></i> Under 14 years old accompanying child(ren) included in your passport (if any)
             </a>
          </h3>
-         <div class="collapse" id="children">
+         <!-- <div class="collapse" id="children">
             <table class="table table-bordered">
                <thead>
                   <tr>
@@ -453,9 +455,9 @@
                   </tr>
                </tbody>
             </table>
-         </div>
+         </div> -->
          <div class="mt-5"></div>
-         <div class="mt-2 text-center"><input type="checkbox" name="v4_evisa_agree" id="v4_evisa_agree"> <label for="v4_evisa_agree">I assure that I have truthfully declared all relevant details.</label></div>
+         <div class="mt-2 text-center"><input type="checkbox" name="evisa_agree" value="1" checked id="v4_evisa_agree"> <label for="v4_evisa_agree">I assure that I have truthfully declared all relevant details.</label></div>
          <div class="row mt-3">
             <div class="d-flex w-100 justify-content-center">
                <div class="w-auto">
@@ -464,6 +466,7 @@
             </div>
          </div>
       </form>
+      <?php echo form_close(); ?>
       <div class="mt-3 mb-5 clearfix"></div>
    </div>
 </div>         

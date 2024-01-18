@@ -12,9 +12,9 @@ class HomeController extends Controller
     
     public function index()
     {
-        echo view('admin/container/header');
+        echo view('admin/common/header');
         echo view('admin/pages/index');
-        echo view('admin/container/footer');
+        echo view('admin/common/footer');
     }
 
     public function dashboard()
@@ -22,10 +22,10 @@ class HomeController extends Controller
         $admin_id = $this->session->has('admin_id');
 		if($admin_id)
 		{
-            echo view('admin/container/header');
-            echo view('admin/container/sidebar');
+            echo view('admin/common/header');
+            echo view('admin/common/sidebar');
             echo view('admin/pages/dashboard');
-            echo view('admin/container/footer');
+            echo view('admin/common/footer');
 		}
 		else
 		{
