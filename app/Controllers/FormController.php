@@ -9,6 +9,7 @@ class FormController extends BaseController
     public function __construct()
     {
         $this->validation = \Config\Services::validation();
+        $this->db      = \Config\Database::connect();
     }
 
 	public function submitSupportForm()
@@ -43,9 +44,7 @@ class FormController extends BaseController
         
         // Now, you can use the validation instance to check the rules
         if ($status) {
-
-
-            print_r('add data here');die;
+            $this->saveFormData($formData, "support_query");
             return redirect()->route('e-visa-support');
         } else {
             // Validation failed
@@ -54,4 +53,12 @@ class FormController extends BaseController
         }
         return redirect()->route('e-visa-support');
 	}
+
+    public function saveFormData($data, $table) {
+        // Get an instance of the database query builder
+        $builder = $this->db->table($table);
+
+        // Insert the data
+        $builder->insert($data);
+    }
 }
