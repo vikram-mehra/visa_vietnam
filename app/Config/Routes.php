@@ -13,6 +13,7 @@ $routes->get('/service-fee', 'Home::service');
 $routes->get('/apply-visa', 'Home::apply_visa');
 $routes->post('submit-support-form', 'FormController::submitSupportForm');
 $routes->post('submit-visa-form', 'FormController::submitVisaForm');
+$routes->post('fetch-seach-data', 'Home::fetchSearchData');
 
 #### admin routes #####
 
