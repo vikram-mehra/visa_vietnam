@@ -77,7 +77,18 @@ class FormController extends BaseController
         $data = $this->visaFormValidation();
         // Now, you can use the validation instance to check the rules
         if ($data['status']) {
-            $this->saveFormData($data['formData'], "visa_application");
+            $childFormStatus = $this->checkChildFormValidation();
+            $insertId = $this->saveFormData($data['formData'], "visa_application");
+            if ($childFormStatus['firstChildStatus']) {
+                $childFormStatus['firstChildData']['parent_id'] = $insertId;
+                $childFormStatus['firstChildData']['child'] = 1;
+                $insertId = $this->saveFormData($childFormStatus['firstChildData'], "children_visa");
+            }
+            if ($childFormStatus['secondChildStatus']) {
+                $childFormStatus['secondChildData']['parent_id'] = $insertId;
+                $childFormStatus['secondChildData']['child'] = 2;
+                $insertId = $this->saveFormData($childFormStatus['secondChildData'], "children_visa");
+            }
             $this->session->setFlashdata('success', 'Submitted successfully!');
             return redirect()->route('apply-visa');
         } else {
@@ -88,7 +99,71 @@ class FormController extends BaseController
         $this->session->setFlashdata('error', 'An error occurred!');
         return redirect()->route('apply-visa');
 	}
+
+    public function checkChildFormValidation() {
+        $firstChildValidation = $this->validateChildData(1);
+        $firstChildStatus = $firstChildValidation['status'];
+        $firstChildData = $firstChildValidation['formData'];        
+        $secondChildStatus = false;
+        $secondChildData = [];
+        if ($firstChildStatus) {
+            $secondChildValidation = $this->validateChildData(2);
+            $secondChildStatus = $secondChildValidation['status'];
+            $secondChildData = $secondChildValidation['formData'];
+        }
+        return [
+            "firstChildStatus" => $firstChildStatus,
+            "firstChildData" => $firstChildData,
+            "secondChildStatus" => $secondChildStatus,
+            "secondChildData" => $secondChildData,
+        ];
+    }
     
+    public function validateChildData($child) {
+        $img_data = $this->processChildImage($child);
+
+        $photo = $img_data['photo'];
+        $children_name = $_POST['evisa_childrenName'.$child]??"";
+        $children_gender = $_POST['evisa_childrenSex'.$child]??"";
+        $children_dob = $_POST['evisa_childrenDOB'.$child]??"";
+        $formData = [
+            'children_name' => $children_name,
+            'children_gender' => $children_gender,
+            'children_dob' => $children_dob,
+            'children_photo' => $photo
+        ];
+
+        $rules = [
+            'children_name' => 'required',
+            'children_gender' => 'required',
+            'children_dob' => 'required',
+            'children_photo' => 'required',
+        ];
+        
+        // Set the rules
+        $this->validation->setRules($rules);
+        $status =  $this->validation->run($formData);
+        return [
+            "status" => $status,
+            "formData" => $formData
+        ];
+    }
+
+    public function processChildImage($child)
+    {
+        $key = 'childphoto'.$child;
+        $result['photo'] = "";
+        // Get the uploaded image file
+        $imageFile = $this->request->getFile($key);
+        $data = [
+            "photo" => [
+                "file" => $imageFile,
+                "path" => './assets/upload/children/',
+            ]
+        ];
+
+        return $this->uploadImg($data, $result);
+    } 
 
     public function visaFormValidation() {
         if (!isset($_POST['evisa_agree']) || $_POST['evisa_agree']== 0) {
@@ -158,7 +233,32 @@ class FormController extends BaseController
             ],
         ];
 
-        foreach ($data as $key => $value) {
+        $result = $this->uploadImg($data, $result);
+
+        // foreach ($data as $key => $value) {
+        //     // pre($value['file']);
+        //     $temp = $value['file']->getTempName();
+        //     $path = $value['path'] . $value['file']->getName();
+
+        //     if ($value['file']->isValid() && !$value['file']->hasMoved()) {
+        //         // Define the upload directory
+        //         $uploadDir = $value['path']; 
+    
+        //         // Move the file to the upload directory
+        //         $value['file']->move($uploadDir);
+    
+        //         // Get the new file name after moving
+        //         $name = $value['file']->getName();
+        //         $result[$key] = $uploadDir.$name;
+    
+        //     }
+        // }
+        return $result;
+
+    }
+
+    public function uploadImg($imgData, $result) {
+        foreach ($imgData as $key => $value) {
             // pre($value['file']);
             $temp = $value['file']->getTempName();
             $path = $value['path'] . $value['file']->getName();
@@ -177,8 +277,8 @@ class FormController extends BaseController
             }
         }
         return $result;
-
     }
+
     /** visa Form submission end */
 
 
@@ -188,5 +288,9 @@ class FormController extends BaseController
 
         // Insert the data
         $builder->insert($data);
+        // Get the last inserted ID
+        $insertId = $this->db->insertID();
+
+        return $insertId;
     }
 }

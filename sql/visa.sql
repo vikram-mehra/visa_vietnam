@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 02:04 PM
+-- Generation Time: Jan 19, 2024 at 02:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `visa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `children_visa`
+--
+
+CREATE TABLE `children_visa` (
+  `id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `child` int(11) NOT NULL,
+  `children_name` varchar(256) NOT NULL,
+  `children_gender` varchar(50) NOT NULL,
+  `children_dob` varchar(256) NOT NULL,
+  `children_photo` varchar(256) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `created` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `children_visa`
+--
+
+INSERT INTO `children_visa` (`id`, `parent_id`, `child`, `children_name`, `children_gender`, `children_dob`, `children_photo`, `status`, `created`) VALUES
+(1, 1, 1, 'fdadfadf', 'Male', '676767', './assets/upload/children/Screenshot 2024-01-14 223209_1.png', 0, '2024-01-19 13:32:55'),
+(2, 1, 2, 'sgsgfs', 'Female', '09090909', './assets/upload/children/Screenshot 2024-01-18 122015_15.png', 0, '2024-01-19 13:32:55');
 
 -- --------------------------------------------------------
 
@@ -98,12 +124,17 @@ CREATE TABLE `visa_application` (
 --
 
 INSERT INTO `visa_application` (`id`, `full_name`, `email`, `passport_no`, `nationality`, `phone`, `purpose_of_entry`, `photo`, `doc`, `entry_checkpoint`, `date_valid`, `status`, `created`) VALUES
-(1, 'ewewr', 'jeet@gmail.com', '', 'Bruney', '9870986839', 'personal / private', 'Screenshot 2024-01-18 122015.png', 'Screenshot 2024-01-14 223209.png', 'La Lay Landport', '23334234324234', '0', '2024-01-18 12:29:39'),
-(2, 'jitendra', 'admin@gmail.com', '', 'Armenia', '9870986839', 'participate in sport competitions', './assets/upload/photo/Screenshot 2024-01-18 122015.png', './assets/upload/doc/Screenshot 2024-01-14 223209.png', 'Noi Bai Airport (HAN) – Ha Noi', '18012024', '0', '2024-01-18 14:35:54');
+(1, 'dfaf', 'admin@gmail.com', '', 'Brazil', '9870986839', 'diplomat', './assets/upload/photo/Screenshot 2024-01-14 223209_15.png', './assets/upload/doc/Screenshot 2024-01-14 223209_1.png', 'Cau Treo Landport', '676767676', '0', '2024-01-19 19:02:55');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `children_visa`
+--
+ALTER TABLE `children_visa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `support_query`
@@ -128,6 +159,12 @@ ALTER TABLE `visa_application`
 --
 
 --
+-- AUTO_INCREMENT for table `children_visa`
+--
+ALTER TABLE `children_visa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `support_query`
 --
 ALTER TABLE `support_query`
@@ -143,7 +180,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visa_application`
 --
 ALTER TABLE `visa_application`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

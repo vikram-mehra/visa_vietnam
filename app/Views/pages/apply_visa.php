@@ -330,7 +330,7 @@
             <i class="fa fa-chevron-down" aria-hidden="true"></i> Under 14 years old accompanying child(ren) included in your passport (if any)
             </a>
          </h3>
-         <!-- <div class="collapse" id="children">
+         <div class="collapse" id="children">
             <table class="table table-bordered">
                <thead>
                   <tr>
@@ -390,7 +390,7 @@
                                  </div>
                               </div>
                               <div class="clearfix"></div>
-                              <div tabindex="500" class="btn btn-secondary btn-file"><i class="fa fa-folder-open"></i>&nbsp;  <span class="hidden-xs">Browse …</span><input id="child1" name="child1" type="file"></div>
+                              <div tabindex="500" class="btn btn-secondary btn-file"><i class="fa fa-folder-open"></i>&nbsp;  <span class="hidden-xs">Browse …</span><input id="child1" name="childphoto1" type="file"></div>
                            </div>
                         </div>
                         <div id="kv-child1-errors" class="mt-2 center-block alert alert-block alert-danger" style="width:100%;display:none"></div>
@@ -447,7 +447,7 @@
                                  </div>
                               </div>
                               <div class="clearfix"></div>
-                              <div tabindex="500" class="btn btn-secondary btn-file"><i class="fa fa-folder-open"></i>&nbsp;  <span class="hidden-xs">Browse …</span><input id="child2" name="child2" type="file"></div>
+                              <div tabindex="500" class="btn btn-secondary btn-file"><i class="fa fa-folder-open"></i>&nbsp;  <span class="hidden-xs">Browse …</span><input id="child2" name="childphoto2" type="file"></div>
                            </div>
                         </div>
                         <div id="kv-child2-errors" class="mt-2 center-block alert alert-block alert-danger" style="width:100%;display:none"></div>
@@ -455,7 +455,7 @@
                   </tr>
                </tbody>
             </table>
-         </div> -->
+         </div>
          <div class="mt-5"></div>
          <div class="mt-2 text-center"><input type="checkbox" name="evisa_agree" value="1" checked id="v4_evisa_agree"> <label for="v4_evisa_agree">I assure that I have truthfully declared all relevant details.</label></div>
          <div class="row mt-3">
