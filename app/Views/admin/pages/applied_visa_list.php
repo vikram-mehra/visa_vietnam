@@ -35,6 +35,8 @@
                                                     <th>Email</th>
                                                     <th>Phone No</th>
                                                     <th>Nationality</th>
+                                                    <th>Photo</th>
+                                                    <th>Passport</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -44,6 +46,8 @@
                                                     <td><?php echo $row->email; ?></td>
                                                     <td><?php echo $row->phone; ?></td>
                                                     <td><?php echo $row->nationality; ?></td>
+                                                    <td><img src='<?php echo base_url().$row->photo; ?>'  height="70px" width="70px"></td>
+                                                    <td><img src='<?php echo base_url().$row->doc; ?>'  height="70px" width="70px" ></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                             </tbody>
