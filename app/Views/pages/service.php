@@ -27,7 +27,7 @@
                   <ul>
                      <li><input type="text" id="answer" size="20"></li>
                   </ul>
-                  <button><a href="apply-visa.php"> Apply Now </a> </button>
+                  <button><a href="apply-visa"> Apply Now </a> </button>
                </div>
             </div>
          </div>

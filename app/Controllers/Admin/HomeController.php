@@ -1,22 +1,71 @@
 <?php
 
 namespace App\Controllers\Admin;
+use App\Controllers\BaseController;
 use CodeIgniter\Controller;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
+    public function __construct()
+    {
+        $this->session = \Config\Services::session();
+        $this->db = \Config\Database::connect();
+    }
+    
     public function index()
     {
-        echo view('admin/container/header');
+        echo view('admin/common/header');
         echo view('admin/pages/index');
-        echo view('admin/container/footer');
+        echo view('admin/common/footer');
     }
 
     public function dashboard()
     {
-        echo view('admin/container/header');
-        echo view('admin/container/sidebar');
-        echo view('admin/pages/dashboard');
-        echo view('admin/container/footer');
+        $admin_id = $this->session->has('admin_id');
+		if($admin_id)
+		{
+            echo view('admin/common/header');
+            echo view('admin/common/sidebar');
+            echo view('admin/pages/dashboard');
+            echo view('admin/common/footer');
+		}
+		else
+		{
+            return redirect()->route('admin');
+		}
+    }
+    public function supportList()
+    {
+        $query = $this->db->table('support_query');
+        $results = $query->get()->getResult();
+        $admin_id = $this->session->has('admin_id');
+		if($admin_id)
+		{
+            echo view('admin/common/header');
+            echo view('admin/common/sidebar');
+            echo view('admin/pages/support_list', ['data' => $results]);
+            echo view('admin/common/footer');
+		}
+		else
+		{
+            return redirect()->route('admin');
+		}
+    }
+    public function appliedVisaList()
+    {
+        $query = $this->db->table('visa_application');
+        $results = $query->get()->getResult();
+        $admin_id = $this->session->has('admin_id');
+		if($admin_id)
+		{
+            echo view('admin/common/header');
+            echo view('admin/common/sidebar');
+            echo view('admin/pages/applied_visa_list', ['data' => $results]);
+            echo view('admin/common/footer');
+		}
+		else
+		{
+            return redirect()->route('admin');
+		}
     }
 }
