@@ -12,22 +12,10 @@
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
                             <a href="<?php echo base_url('admin'); ?>" class="logo logo-dark">
-                                <span class="logo-sm">
-                                    <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="<?php echo base_url('assets'); ?>/images/logo-dark.png" alt="" height="20">
-                                </span>
+                                <p> E -Visa </p>
                             </a>
 
-                            <a href="<?php echo base_url('admin'); ?>" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="<?php echo base_url('assets'); ?>/images/logo-light.png" alt="" height="20">
-                                </span>
-                            </a>
+                            
                         </div>
 
                         <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
@@ -68,18 +56,11 @@
                             <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?php echo base_url('assets'); ?>/images/logo-dark.png" alt="" height="20">
+                            E-Visa
                         </span>
                     </a>
 
-                    <a href="<?php echo base_url('admin'); ?>" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="<?php echo base_url('assets'); ?>/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="<?php echo base_url('assets'); ?>/images/logo-light.png" alt="" height="20">
-                        </span>
-                    </a>
+                  
                 </div>
 
                 <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
