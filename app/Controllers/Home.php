@@ -41,6 +41,20 @@ class Home extends BaseController
         echo view('pages/service');
         echo view('common/footer');
     }
+
+    public function privacy()
+    {
+        echo view('common/header');
+        echo view('pages/privacy-and-policy');
+        echo view('common/footer');
+    }
+
+    public function terms()
+    {
+        echo view('common/header');
+        echo view('pages/terms-of-use');
+        echo view('common/footer');
+    }
     public function apply_visa()
     {
         echo view('common/header');

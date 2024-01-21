@@ -7,6 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Home::about');
+$routes->get('/terms-of-use', 'Home::terms');
+$routes->get('/privacy-and-policy', 'Home::privacy');
+
 $routes->get('/e-visa-search', 'Home::search');
 $routes->get('/e-visa-support', 'Home::support');
 $routes->get('/service-fee', 'Home::service');
