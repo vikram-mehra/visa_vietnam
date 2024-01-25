@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2024 at 02:34 PM
+-- Generation Time: Jan 25, 2024 at 08:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,7 +35,7 @@ CREATE TABLE `children_visa` (
   `children_gender` varchar(50) NOT NULL,
   `children_dob` varchar(256) NOT NULL,
   `children_photo` varchar(256) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0,
+  `status` varchar(255) NOT NULL DEFAULT 'pending',
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,8 +44,9 @@ CREATE TABLE `children_visa` (
 --
 
 INSERT INTO `children_visa` (`id`, `parent_id`, `child`, `children_name`, `children_gender`, `children_dob`, `children_photo`, `status`, `created`) VALUES
-(1, 1, 1, 'fdadfadf', 'Male', '676767', './assets/upload/children/Screenshot 2024-01-14 223209_1.png', 0, '2024-01-19 13:32:55'),
-(2, 1, 2, 'sgsgfs', 'Female', '09090909', './assets/upload/children/Screenshot 2024-01-18 122015_15.png', 0, '2024-01-19 13:32:55');
+(1, 1, 1, 'erq2vwraf', 'Male', '242', './assets/upload/children/Screenshot 2024-01-14 223209_1.png', '0', '2024-01-19 13:32:55'),
+(2, 1, 2, 'abhishek', 'Female', '2323676', './assets/upload/children/Screenshot 2024-01-14 223209.png', '0', '2024-01-19 13:32:55'),
+(3, 3, 1, 'fdadfadf123', 'Male', '6767676', '', '0', '2024-01-19 15:24:42');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,10 @@ CREATE TABLE `visa_application` (
 --
 
 INSERT INTO `visa_application` (`id`, `full_name`, `email`, `passport_no`, `nationality`, `phone`, `purpose_of_entry`, `photo`, `doc`, `entry_checkpoint`, `date_valid`, `status`, `created`) VALUES
-(1, 'dfaf', 'admin@gmail.com', '', 'Brazil', '9870986839', 'diplomat', './assets/upload/photo/Screenshot 2024-01-14 223209_15.png', './assets/upload/doc/Screenshot 2024-01-14 223209_1.png', 'Cau Treo Landport', '676767676', '0', '2024-01-19 19:02:55');
+(1, 'vxx', 'admin@gmail.com', '', 'Brazil', '9870986839', 'diplomat', './assets/upload/photo/Screenshot 2024-01-14 223209.png', './assets/upload/doc/Screenshot 2024-01-14 223209_1.png', 'Cau Treo Landport', '676767676', 'Rejected', '2024-01-19 19:02:55'),
+(2, 'hello dilip', 'hello@gmail.com', '', 'Brazil', '9090900909', 'office / orgarnization of economy, culture, technology, non-government', './assets/upload/photo/Screenshot 2024-01-14 223209_1.png', './assets/upload/doc/Screenshot 2024-01-14 223209_2.png', 'Na Meo Landport', '3434343434', 'Rejected', '2024-01-19 20:53:15'),
+(3, 'hello23 mehra', 'hello23@gmail.com', '', 'Australia', '98709867878', 'playing fooball', './assets/upload/photo/Screenshot 2024-01-18 122015_1.png', './assets/upload/doc/Screenshot 2024-01-18 122015.png', 'Quy Nhon Seaport', '6767676676', 'pending', '2024-01-19 20:54:42'),
+(4, 'jitendra mehra', 'kamalk971943@gmail.comssdd', '', 'Austria', '1212', 'summit, conference', './assets/upload/photo/Screenshot 2024-01-18 122015.png', './assets/upload/doc/Screenshot 2024-01-14 223209.png', 'Cau Treo Landport', '5235', 'Approved', '2024-01-24 21:21:29');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +166,7 @@ ALTER TABLE `visa_application`
 -- AUTO_INCREMENT for table `children_visa`
 --
 ALTER TABLE `children_visa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `support_query`
@@ -180,7 +184,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `visa_application`
 --
 ALTER TABLE `visa_application`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
