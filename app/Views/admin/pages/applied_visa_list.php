@@ -37,6 +37,8 @@
                                                     <th>Nationality</th>
                                                     <th>Photo</th>
                                                     <th>Passport</th>
+                                                    <th>status</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -48,6 +50,22 @@
                                                     <td><?php echo $row->nationality; ?></td>
                                                     <td><img src='<?php echo base_url().$row->photo; ?>'  height="70px" width="70px"></td>
                                                     <td><img src='<?php echo base_url().$row->doc; ?>'  height="70px" width="70px" ></td>
+                                                    <td>
+                                                        <?php if (strtolower($row->status)=="pending") { ?>
+                                                    <button type="button" class="btn btn-outline-warning"><?php echo ucfirst($row->status); ?></button>
+                                                        <?php }elseif (strtolower($row->status)=="approved"){?>
+                                                    <button type="button" class="btn btn-outline-success"><?php echo ucfirst($row->status); ?></button>
+                                                        <?php }elseif (strtolower($row->status)=="rejected"){?>
+                                                    <button type="button" class="btn btn-outline-danger"><?php echo ucfirst($row->status); ?></button>
+                                                        <?php }else{?>
+                                                    <button type="button" class="btn btn-outline-primary"><?php echo ucfirst($row->status); ?></button>
+                                                        <?php }?>
+                                                    </td>
+                                                    <td style="width: 100px">
+                                                            <a href="<?php echo base_url('admin/edit-applied-visa/'.$row->id); ?>" class="btn btn-outline-dark btn-sm edit" title="Edit">
+                                                                <i class="fas fa-pencil-alt"></i>
+                                                            </a>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                             </tbody>

@@ -24,5 +24,7 @@ $routes->get('/admin', 'Admin\LoginController::index');
 $routes->get('/admin/dashboard', 'Admin\HomeController::dashboard');
 $routes->get('/admin/support-list', 'Admin\HomeController::supportList');
 $routes->get('/admin/applied-visa', 'Admin\HomeController::appliedVisaList');
+$routes->get('/admin/edit-applied-visa/(:segment)', 'Admin\HomeController::editAppliedVisaList/$1');
+$routes->post('update-applied-visa/(:segment)/(:segment)/(:segment)', 'Admin\HomeController::updateVisaForm/$1/$2/$3');
 $routes->post('submit-form', 'Admin\LoginController::setUserLogin');
 $routes->get('admin/logout', 'Admin\LoginController::UserlogOut');

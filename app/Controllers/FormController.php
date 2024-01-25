@@ -234,32 +234,11 @@ class FormController extends BaseController
         ];
 
         $result = $this->uploadImg($data, $result);
-
-        // foreach ($data as $key => $value) {
-        //     // pre($value['file']);
-        //     $temp = $value['file']->getTempName();
-        //     $path = $value['path'] . $value['file']->getName();
-
-        //     if ($value['file']->isValid() && !$value['file']->hasMoved()) {
-        //         // Define the upload directory
-        //         $uploadDir = $value['path']; 
-    
-        //         // Move the file to the upload directory
-        //         $value['file']->move($uploadDir);
-    
-        //         // Get the new file name after moving
-        //         $name = $value['file']->getName();
-        //         $result[$key] = $uploadDir.$name;
-    
-        //     }
-        // }
         return $result;
-
     }
 
     public function uploadImg($imgData, $result) {
         foreach ($imgData as $key => $value) {
-            // pre($value['file']);
             $temp = $value['file']->getTempName();
             $path = $value['path'] . $value['file']->getName();
 
