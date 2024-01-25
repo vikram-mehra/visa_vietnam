@@ -164,7 +164,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
-                                                            <img src='<?php echo base_url().$data['childphoto1']; ?>' class="img-thumbnail" alt="photo">
+                                                            <img src='<?php echo base_url().$data['childphoto1']; ?>' class="img-fluid" alt="photo">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -209,7 +209,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
-                                                            <img src='<?php echo base_url().$data['childphoto2']; ?>' class="img-thumbnail" alt="photo">
+                                                            <img src='<?php echo base_url().$data['childphoto2']; ?>' class="img-fluid" alt="photo">
                                                             </div>
                                                         </div>
                                                     </div>
